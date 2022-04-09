@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="Scratch_Card.MainPage"
+             NavigationPage.HasNavigationBar="false"
+             NavigationPage.HasBackButton="false"
+             BackgroundColor="White">
+
+    <StackLayout VerticalOptions="FillAndExpand">
+        <Button Text="View Scratch Card"
+                    Clicked="Button_Clicked"
+                    BackgroundColor="Transparent"
+                    TextColor="#13ba66"
+                    VerticalOptions="EndAndExpand"
+                    Margin="10">
+        </Button>
+    </StackLayout>
+
+</ContentPage>

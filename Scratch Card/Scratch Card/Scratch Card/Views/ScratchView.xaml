@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Scratch_Card.Views.ScratchView"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             xmlns:tt="clr-namespace:TouchTracking.Forms;assembly=TouchTracking.Forms"
+             xmlns:local="clr-namespace:Scratch_Card.Helper"
+             NavigationPage.HasNavigationBar="false"
+             NavigationPage.HasBackButton="false"
+             BackgroundColor="Transparent">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Label Text="Testing"
+                   TextColor="Black"
+                   AbsoluteLayout.LayoutBounds="0.1,0.1,0.1,0.1"
+                   AbsoluteLayout.LayoutFlags="All"
+                   x:Name="TxtTest">
+            </Label>
+
+            <Frame AbsoluteLayout.LayoutBounds="0.5, 0.5, 0.53, 0.35"
+                   AbsoluteLayout.LayoutFlags="All"
+                   VerticalOptions="FillAndExpand"
+                   CornerRadius="10"
+                   Padding="0"
+                   HasShadow="true">
+                <StackLayout VerticalOptions="FillAndExpand">
+                    <Grid VerticalOptions="FillAndExpand">
+
+                        <!--Back Section-->
+
+                        <StackLayout Grid.Row="0"
+                             Grid.Column="0">
+                            <Grid VerticalOptions="FillAndExpand"
+                                  BackgroundColor="#fffaf5">
+                                <Label Text="Oops!"
+                                       FontSize="15"
+                                       FontAttributes="Bold"
+                                       TextColor="Black"
+                                       HorizontalOptions="FillAndExpand"
+                                       HorizontalTextAlignment="Center"
+                                       Padding="0,3,0,0">
+                                </Label>
+
+                                <Image Source="{local:EmbeddedImage Scratch_Card.Images.SC1.png}"
+                                       Grid.Row="0"
+                                       Grid.Column="0"
+                                       VerticalOptions="EndAndExpand">
+                                </Image>
+
+                                <!--<StackLayout Grid.Row="0"
+                                             Grid.Column="0"
+                                             Margin="10,45,0,0">
+                                    <Label Text="₹63"
+                                           TextColor="Black"
+                                           FontAttributes="Bold"
+                                           FontSize="40">
+                                    </Label>
+                                    <Label Text="#KMA09394853"
+                                           FontSize="16"
+                                           TextColor="Black">
+                                    </Label>
+                                    <Label Text="1KMAW"
+                                           FontSize="14"
+                                           TextColor="Black">
+                                    </Label>
+                                    <Label Text="Sent to wallet"
+                                           FontSize="14"
+                                           TextColor="Black">
+                                    </Label>
+                                </StackLayout>-->
+
+                                <StackLayout Grid.Row="0"
+                                             Grid.Column="0"
+                                             Margin="10,80,0,0">
+                                    <Label Text="Better luck next time 🤞🏻"
+                                           TextColor="Black"
+                                           FontSize="16"
+                                           HorizontalOptions="CenterAndExpand">
+                                    </Label>
+                                </StackLayout>
+                            </Grid>
+                        </StackLayout>
+
+                        <!--Front Section-->
+
+                        <skia:SKCanvasView x:Name="canvasView"
+                               VerticalOptions="Fill"
+                               Grid.Row="0"
+                               Grid.Column="0" 
+                               PaintSurface="CanvasView_PaintSurface">
+                        </skia:SKCanvasView>
+
+                        <Grid.Effects>
+                            <tt:TouchEffect Capture="True"
+                            TouchAction="TouchEffect_TouchAction">
+                            </tt:TouchEffect>
+                        </Grid.Effects>
+                    </Grid>
+                </StackLayout>
+            </Frame>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

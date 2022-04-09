@@ -1,0 +1,15 @@
+﻿Install NuGet:
+
+1. SkiaSharp.Views.Forms
+2. TouchTracking.Forms
+
+
+Reference:
+
+1. https://xamgirl.com/scratch-view-in-xamarin-forms/
+
+
+ToDo:
+
+1. On iOS AppDelegate classs initialize the TouchTracking library by adding:
+    new TouchTracking.Forms.iOS.TouchEffect(); 
